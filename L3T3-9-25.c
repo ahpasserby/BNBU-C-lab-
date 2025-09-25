@@ -17,13 +17,53 @@ int main() {
 }
 
 /* 
-Put outputs and explanations here.
-1. 10of100: 10% o f 100 is 10.000000
-   Explanation: '1''0' read as integer 10, 'o' as ch1, 'f' as ch2, '1''0''0' as integer 100
+输出结果和解释：
 
-2. 10 of100: 10%   o f 100 is 10.000000
-   Explanation: '1''0' as 10, space as ch1, 'o' as ch2, 'f''1''0''0' fails to convert to integer
+1. 输入：10of100
+   输出：10% of 100 is 10.000000
+   
+   printf对应关系：
+   %d%% → 10%
+   %c    → o
+   %c    → f  
+   %d    → 100
+   %f    → 10.000000
+   
+   变量赋值：
+   int percentage ← 10
+   char ch1 ← 'o'
+   char ch2 ← 'f'
+   int x ← 100
 
-3. 10 of 100: 10%   o f 0 is 0.000000
-   Explanation: '1''0' as 10, space as ch1, 'o' as ch2, 'f' fails integer conversion, x remains uninitialized
+2. 输入：10 of100
+   输出：10%  o 0 is 0.000000
+   
+   printf对应关系：
+   %d%% → 10%
+   %c    → 空格
+   %c    → o
+   %d    → 0（垃圾值）
+   %f    → 0.000000
+   
+   变量赋值：
+   int percentage ← 10
+   char ch1 ← ' '（空格）
+   char ch2 ← 'o'
+   int x ← 垃圾值（未成功读取）
+
+3. 输入：10 of 100
+   输出：10%  o 0 is 0.000000
+   
+   printf对应关系：
+   %d%% → 10%
+   %c    → 空格
+   %c    → o
+   %d    → 0（垃圾值）
+   %f    → 0.000000
+   
+   变量赋值：
+   int percentage ← 10
+   char ch1 ← ' '（空格）
+   char ch2 ← 'o'
+   int x ← 垃圾值（未成功读取）
 */
